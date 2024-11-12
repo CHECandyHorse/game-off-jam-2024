@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=4 uid="uid://bhsqqp3on8k6c"]
+
+[ext_resource type="Texture2D" uid="uid://djhdtf30s855k" path="res://tileset128.png" id="1_48g6o"]
+[ext_resource type="PackedScene" uid="uid://cnli71affbhti" path="res://scenes/player.tscn" id="2_kppuk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1v11w"]
+texture = ExtResource("1_48g6o")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_mla6h"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_1v11w")
+
+[node name="main" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAADAAEAAAAAAAAAAAD8/wEAAAAAAAAAAAAEAAEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAAFAAEAAAAAAAAAAAD5/wEAAAAAAAAAAAAGAAEAAAAAAAAAAAD4/wEAAAAAAAAAAAAHAAEAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wMAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD6/wMAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_mla6h")
+
+[node name="player" parent="." instance=ExtResource("2_kppuk")]
+position = Vector2(-71, 6)
+
+[node name="camera" type="Camera2D" parent="player"]
+position = Vector2(-1, 2)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
