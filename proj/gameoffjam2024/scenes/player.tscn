@@ -81,16 +81,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opdr3"]
-radius = 4.0
+radius = 7.0
 
 [node name="player" type="CharacterBody2D"]
+light_mask = 0
 script = ExtResource("1_pq8th")
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_foous")
-animation = &"walk"
-frame_progress = 0.981657
+animation = &"idle"
+frame_progress = 0.582547
 
 [node name="collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_opdr3")
